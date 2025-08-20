@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Weather App</title>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="bg-[url('images/bg_image.jpg')] bg-cover bg-no-repeat min-h-screen p-5 flex flex-col items-center gap-5">
+
+    <div class="flex items-center gap-3">
+        <div class="text-white text-2xl font-bold ">Weather App</div>
+        <img src="{% static 'images/116.png' %}" alt="">
+    </div>
+
+    <form action="" class="flex items-center gap-3 hover:scale-105 delay-500 ease-in-out">
+        <input placeholder="Enter the City" name="city" type="text" class="bg-white/20 px-5 py-2 rounded-2xl placeholder:text-black/60
+         placeholder:font-bold focus:outline-black text-black font-bold">
+        <button><i class='bxr  bx-search-alt text-black text-2xl bg-white/20 p-3 rounded-full'></i> </button>
+    </form>
+
+    <div class="flex bg-white/20 p-5 w-sm justify-between rounded-2xl hover:scale-105 delay-500 ease-in-out">
+        <div class="text-black">
+            <p class="text-2xl font-bold">{{temperature}}&deg;c</p>
+            <p class="font-semibold text-sm">Now</p>
+            <p class="font-semibold mt-3">{{city}}, {{country}}</p>
+        </div>
+        <img src="{% static 'images/113.png' %}" alt="" class="h-25">
+    </div>
+
+    <div class="flex p-5 bg-white/20 rounded-2xl gap-7 w-sm hover:scale-105 delay-500 ease-in-out">
+
+        <div class="flex flex-col text-black justify-between bg-opicity-0">
+            <img src="{{icon_url}}" alt="" class="bg-opicity-0">
+            <div class="mb-3">
+                <p class="text-2xl font-bold ">{{weather}}</p>
+                <p class="font-semibold">{{description}}</p>
+            </div>
+        </div>
+        <div class="flex flex-col gap-3 ">
+            <div class="p-3 bg-white/20 text-black flex items-center gap-3 rounded-2xl">
+                <i class='bxr  bx-thermometer text-2xl'></i>
+                <div class="flex flex-col">
+                    <p class="font-bold text-2xl">{{temperature}}&deg;c</p>
+                    <p class="text-sm text-right">Temperature</p>
+                </div>
+            </div>
+            <div class="">
+                <div class="p-3 bg-white/20 text-black flex items-center gap-3 rounded-2xl">
+                    <i class='bxr  bx-tachometer text-2xl'></i>
+                    <div class="flex flex-col">
+                        <p class="font-bold text-2xl">{{wind_speed}}m/s</p>
+                        <p class="text-sm text-right">Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="p-3 bg-white/20 text-black flex items-center gap-3 rounded-2xl">
+                    <i class='bxr  bx-cloud-rain-wind text-2xl'></i>
+                    <div class="flex flex-col">
+                        <p class="font-bold text-2xl">{{humidity}}%</p>
+                        <p class="text-sm text-right">humidity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
